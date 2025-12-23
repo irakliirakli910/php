@@ -5,10 +5,12 @@ class user
     private string $name;
     private  string $lastname;
     private string $tel;
-    private string $username;
-    private string $password;
+    private ?string $username;
+    private ?string $password;
 
-    public function __construct(?int $userid,string $name,string $lastname, string $tel, string $username,string $password )
+    private ?string $imgpath;
+
+    public function __construct(?int $userid,string $name,string $lastname, string $tel, ?string $username,?string $password ,?string $imgpath)
     {
 
   
@@ -18,6 +20,7 @@ class user
        $this->tel=$tel;
        $this->username=$username;
        $this->password=$password;
+       $this->imgpath=$imgpath;
 
     }
 
@@ -28,6 +31,23 @@ class user
 
         
     }
+
+    public function getImgpath()
+    {
+
+        return $this->imgpath;
+
+        
+    }
+
+    public function setImgpath(string $imgpath)
+    {
+
+        $this->imgpath=$imgpath;
+
+        
+    }
+
 
     public function setUserId($id)
     {
